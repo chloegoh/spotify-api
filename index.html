@@ -12,11 +12,19 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+    <!-- jQuery -->
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>-->
 
-    <title>Title</title>
+    <title>Genres</title>
   </head>
   <body>
-    <h1>Title</h1>
+    <h1>Browse</h1>
+
+    <div id="genres"></div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script
@@ -24,5 +32,11 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Custom JavaScript files -->
+    <script type="module" src="./services/auth.js"></script>
+    <script type="module" src="./services/genre.js"></script>
+    <script type="module" src="./services/ui.mjs"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
