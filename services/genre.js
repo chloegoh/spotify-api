@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 async function getNewReleases(token) {
   try {
     const response = await fetch(
@@ -52,10 +50,10 @@ async function getGenre(token, category_id) {
   }
 }
 
-async function getPlaylistsByGenre(token) {
+async function getPlaylistsByGenre(token, category_id) {
   try {
     const response = await fetch(
-      "https://api.spotify.com/v1/browse/categories/{category_id}/playlists",
+      `https://api.spotify.com/v1/browse/categories/${category_id}/playlists`,
       {
         method: "GET",
         headers: { Authorization: "Bearer " + token },

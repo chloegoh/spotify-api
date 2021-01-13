@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 const clientId = "694505d0659142c392b2a6b1942d9bf8";
 const clientSecret = "a61894eaca3548519e1ad64622c16cb8";
 
@@ -9,9 +7,7 @@ async function getToken() {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization:
-          "Basic " +
-          Buffer.from(clientId + ":" + clientSecret).toString("base64"),
+        Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
       },
       body: "grant_type=client_credentials",
     });
