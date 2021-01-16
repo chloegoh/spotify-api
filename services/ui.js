@@ -1,4 +1,5 @@
 import { genre } from "./genre.js";
+import { mail } from "./mail.js";
 
 const displayGenres = (genres) => {
   // Show all categories/genres
@@ -10,7 +11,7 @@ const displayGenres = (genres) => {
 };
 
 const handleGenreEvents = (token) => {
-  // On-click handlers for each genre
+  // On-click handler for each genre
   $(".genre-img").click(async function () {
     // Get playlists and display them after genre has been clicked
     const categoryId = $(this).parent().attr("id");
@@ -55,7 +56,7 @@ const displayPlaylists = () => {
 };
 
 const handlePlaylistsEvents = (token) => {
-  // On-click handlers for each playlist
+  // On-click handler for each playlist
   $(".playlist-img").click(async function () {
     // Get tracks and display them after playlist has been clicked
     const playlistId = $(this).parent().attr("id");
@@ -106,10 +107,33 @@ const displayTracks = () => {
   }
 };
 
+const handleMailingEvents = () => {
+  // On-click handler for send button
+  $("#send-button").click(function () {
+    // Display form
+    $("#form-div").css("display", "block");
+    $(this).css("display", "none");
+  });
+
+  $("#cancel-button").click(function () {
+    // Hide form
+    $("#form-div").css("display", "none");
+    $("#send-button").css("display", "block");
+  });
+
+  // Send email after submit
+  $("#submit-button").click(function () {
+    mail.sendEmail($("input[name='email']").val());
+    // Clear input
+    $("input[name='email']").val("");
+  });
+};
+
 export const ui = {
   displayGenres,
   handleGenreEvents,
   displayPlaylists,
   handlePlaylistsEvents,
   displayTracks,
+  handleMailingEvents,
 };

@@ -75,13 +75,72 @@ img:hover {
 #tracklist-heading {
   display: flex;
   justify-content: space-between;
+  margin: 0px 120px 20px 120px;
 }
 
 #tracklist-heading h5 {
   /* text-transform: uppercase; */
   padding: 20px;
-  margin: 0px 120px 20px 120px;
   border: thin dotted #7e8284;
   box-shadow: 5px 5px;
   opacity: 0.7;
+}
+
+/**********************************************
+Send button & hidden form styles on tracks.html
+***********************************************/
+
+/* Hide input form by default */
+#form-div {
+  display: none;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: 1px 1px;
+}
+
+/* Remove default input style */
+input:focus {
+  outline: none;
+}
+
+#form-div p {
+  color: #000000;
+}
+
+#form-div input {
+  width: 100%;
+  border: 1px solid #7e8284;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+#form-div,
+#send-button {
+  position: absolute;
+  z-index: 9;
+  right: 140px;
+  top: 30px;
+}
+
+#button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 4px 8px;
+  margin: 0px 8px;
+  background-color: #c3e6f4;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 2px 2px;
+}
+
+.button:hover {
+  background-color: #7ec0ee;
+  transform: translate(2px, 2px);
 }

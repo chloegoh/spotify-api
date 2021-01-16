@@ -5,8 +5,6 @@ import { ui } from "../services/ui.js";
 async function runApp() {
   try {
     const token = await Promise.resolve(auth.getToken());
-    // const newReleases = await Promise.resolve(genre.getNewReleases(token));
-    // console.log(newReleases);
     // Retrieve a list of genres
     const genres = await Promise.resolve(genre.getGenres(token));
 
@@ -24,6 +22,7 @@ async function runApp() {
       // Display playlists if already in session storage
       if (sessionStorage.getItem("tracks")) {
         ui.displayTracks();
+        ui.handleMailingEvents();
       }
     });
   } catch (error) {
