@@ -1,5 +1,7 @@
-const clientId = "694505d0659142c392b2a6b1942d9bf8";
-const clientSecret = "a61894eaca3548519e1ad64622c16cb8";
+import { config } from "../js/config.js";
+
+const clientId = config.clientId;
+const clientSecret = config.clientSecret;
 
 async function getToken() {
   try {

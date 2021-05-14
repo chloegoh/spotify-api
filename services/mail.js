@@ -1,7 +1,9 @@
 // Mailchimp Transactional API
 // https://mailchimp.com/developer/transactional/guides/quick-start/
 
-const apiKey = "T2WcFDWehBcZiDd-wh_1Og";
+import { config } from "../js/config.js";
+
+const apiKey = config.apiKey;
 
 async function sendEmail(email) {
   try {
